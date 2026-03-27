@@ -33,14 +33,14 @@ export function HomePage() {
       <ProfileBar
         initials="H"
         name="Huzaifa Siddiqui"
-        role="Full-stack engineer \u00B7 AI security enthusiast"
+        role="Full-stack engineer · AI Automations enthusiast"
         isVisible={isActive}
       />
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0, position: "relative" }}>
         <Landing
           initials="H"
           heading="Hey, I'm Huzaifa"
-          subtitle="Full-stack engineer, AI security enthusiast, occasional golfer. Ask my digital clone anything."
+          subtitle="Full-stack engineer, AI Automations enthusiast, occasional golfer. Ask my digital clone anything."
           typingPhrase="Ask me anything"
           chips={CHIPS}
           isHidden={isActive}
