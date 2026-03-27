@@ -1,0 +1,141 @@
+.inputContainer {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 2rem;
+  padding: 0.35rem 0.4rem 0.35rem 0.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+.inputContainer::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 2.05rem;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, var(--accent) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.inputContainer:focus-within {
+  border-color: transparent;
+  box-shadow: var(--shadow-input-focus);
+}
+
+.inputContainer:focus-within::before { opacity: 0.5; }
+
+.inputRow { display: flex; align-items: center; gap: 0.4rem; }
+
+/* ── Mic Button ── */
+.micBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.micBtn:hover {
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+}
+
+.micBtn svg { width: 18px; height: 18px; }
+
+.micBtn.recording {
+  color: var(--accent);
+  background: var(--mic-active-bg);
+}
+
+.micBtn.recording::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--mic-pulse);
+  animation: micPulse 1.5s ease-in-out infinite;
+}
+
+/* ── Input ── */
+.chatInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  padding: 0.55rem 0.25rem;
+  letter-spacing: 0.005em;
+}
+
+.chatInput::placeholder { color: var(--text-tertiary); font-weight: 400; }
+
+/* ── Send Button ── */
+.sendBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+.sendBtn.active { opacity: 1; transform: scale(1); }
+.sendBtn:hover { transform: scale(1.08); }
+.sendBtn svg { width: 14px; height: 14px; }
+
+/* ── Voice Status ── */
+.voiceStatus {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem 0.25rem;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.voiceStatus.visible { display: flex; }
+
+.voiceWave {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  height: 14px;
+}
+
+.voiceWave span {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: voiceWave 0.8s ease-in-out infinite alternate;
+}
+
+.voiceWave span:nth-child(1) { height: 5px; animation-delay: 0s; }
+.voiceWave span:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+.voiceWave span:nth-child(3) { height: 7px; animation-delay: 0.3s; }
+.voiceWave span:nth-child(4) { height: 12px; animation-delay: 0.45s; }
+.voiceWave span:nth-child(5) { height: 5px; animation-delay: 0.6s; }

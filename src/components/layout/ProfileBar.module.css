@@ -1,0 +1,60 @@
+.profileBar {
+  flex-shrink: 0;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease 0.15s,
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid transparent;
+}
+
+.profileBar.visible {
+  max-height: 80px;
+  opacity: 1;
+  padding: 0.75rem 2rem;
+  border-bottom-color: var(--border-primary);
+}
+
+.avatarSm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--avatar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.avatarSm span {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.info { display: flex; flex-direction: column; }
+
+.name {
+  font-family: 'Literata', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .profileBar.visible { padding-left: 1.25rem; padding-right: 1.25rem; }
+}

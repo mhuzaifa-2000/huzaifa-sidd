@@ -1,0 +1,19 @@
+.themeToggles { display: flex; gap: 0.35rem; align-items: center; }
+
+.themeBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--icon-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.themeBtn:hover { color: var(--icon-hover); background: var(--bg-tertiary); }
+.themeBtn.active { color: var(--text-primary); border-color: var(--border-primary); background: var(--bg-tertiary); }
+.themeBtn svg { width: 17px; height: 17px; }
