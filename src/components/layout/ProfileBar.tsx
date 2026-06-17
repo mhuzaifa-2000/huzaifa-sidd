@@ -1,11 +1,5 @@
+import type { ProfileBarProps } from "../../lib/types/layout";
 import styles from "./ProfileBar.module.css";
-
-interface ProfileBarProps {
-  initials: string;
-  name: string;
-  role: string;
-  isVisible: boolean;
-}
 
 export function ProfileBar({ initials, name, role, isVisible }: ProfileBarProps) {
   return (

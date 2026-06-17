@@ -1,11 +1,8 @@
 import { useState, useCallback } from "react";
 import { MicIcon, SendIcon } from "../icons";
 import { useVoiceInput } from "../../hooks/useVoiceInput";
+import type { ChatInputProps } from "../../lib/types/chat";
 import styles from "./ChatInput.module.css";
-
-interface ChatInputProps {
-  onSubmit: (text: string) => void;
-}
 
 export function ChatInput({ onSubmit }: ChatInputProps) {
   const [value, setValue] = useState("");

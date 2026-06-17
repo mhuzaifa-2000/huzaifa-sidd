@@ -1,9 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-
-interface SpeechRecognitionEvent {
-  resultIndex: number;
-  results: SpeechRecognitionResultList;
-}
+import type { SpeechRecognitionEvent } from "../lib/types/speech";
 
 export function useVoiceInput(onResult: (text: string) => void) {
   const [isRecording, setIsRecording] = useState(false);

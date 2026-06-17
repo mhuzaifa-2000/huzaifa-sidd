@@ -1,22 +1,7 @@
 import { GitHubIcon, LinkedInIcon, EmailIcon, MenuIcon } from "../icons";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "../../lib/config";
+import type { NavLink, SocialLink, HeaderProps } from "../../lib/types/header";
 import styles from "./Header.module.css";
-
-interface NavLink {
-  label: string;
-  href: string;
-}
-
-interface SocialLink {
-  label: string;
-  href: string;
-  icon: React.ComponentType;
-}
-
-interface HeaderProps {
-  name: string;
-  navLinks: NavLink[];
-  socialLinks: SocialLink[];
-}
 
 export function Header({ name, navLinks, socialLinks }: HeaderProps) {
   return (
@@ -61,7 +46,7 @@ export const DEFAULT_NAV_LINKS: NavLink[] = [
 ];
 
 export const DEFAULT_SOCIAL_LINKS: SocialLink[] = [
-  { label: "GitHub", href: "#", icon: GitHubIcon },
-  { label: "LinkedIn", href: "#", icon: LinkedInIcon },
-  { label: "Email", href: "mailto:hello@huzaifa.dev", icon: EmailIcon },
+  { label: "GitHub", href: GITHUB_URL, icon: GitHubIcon },
+  { label: "LinkedIn", href: LINKEDIN_URL, icon: LinkedInIcon },
+  { label: "Email", href: `mailto:${EMAIL}`, icon: EmailIcon },
 ];

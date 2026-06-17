@@ -1,13 +1,7 @@
-import type { Theme } from "../../hooks/useTheme";
 import { ChatInput } from "./ChatInput";
 import { ThemeToggle } from "./ThemeToggle";
+import type { BottomBarProps } from "../../lib/types/layout";
 import styles from "./BottomBar.module.css";
-
-interface BottomBarProps {
-  theme: Theme;
-  onThemeChange: (theme: Theme) => void;
-  onSubmit: (text: string) => void;
-}
 
 export function BottomBar({ theme, onThemeChange, onSubmit }: BottomBarProps) {
   return (

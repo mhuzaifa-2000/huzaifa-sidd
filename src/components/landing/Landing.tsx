@@ -1,15 +1,6 @@
 import { useTypingAnimation } from "../../hooks/useTypingAnimation";
+import type { LandingProps } from "../../lib/types/landing";
 import styles from "./Landing.module.css";
-
-interface LandingProps {
-  initials: string;
-  heading: string;
-  subtitle: string;
-  typingPhrase: string;
-  chips: string[];
-  isHidden: boolean;
-  onChipClick: (text: string) => void;
-}
 
 export function Landing({
   initials,

@@ -1,6 +1,4 @@
-import type { SVGProps } from "react";
-
-type IconProps = SVGProps<SVGSVGElement>;
+import type { IconProps } from "../../lib/types/icons";
 
 const defaultProps: IconProps = {
   viewBox: "0 0 24 24",

@@ -1,11 +1,6 @@
 import { useEffect, useRef } from "react";
-import type { ChatMessage } from "../../hooks/useChat";
+import type { ChatViewProps } from "../../lib/types/chat";
 import styles from "./ChatView.module.css";
-
-interface ChatViewProps {
-  messages: ChatMessage[];
-  isActive: boolean;
-}
 
 export function ChatView({ messages, isActive }: ChatViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);

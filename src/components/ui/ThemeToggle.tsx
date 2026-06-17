@@ -1,11 +1,6 @@
-import type { Theme } from "../../hooks/useTheme";
 import { SunIcon, MoonIcon } from "../icons";
+import type { ThemeToggleProps } from "../../lib/types/theme";
 import styles from "./ThemeToggle.module.css";
-
-interface ThemeToggleProps {
-  theme: Theme;
-  onThemeChange: (theme: Theme) => void;
-}
 
 export function ThemeToggle({ theme, onThemeChange }: ThemeToggleProps) {
   return (
