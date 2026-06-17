@@ -54,12 +54,6 @@ export function ChatInput({ onSubmit }: ChatInputProps) {
           <SendIcon />
         </button>
       </div>
-      <div className={`${styles.voiceStatus} ${isRecording ? styles.visible : ""}`}>
-        <div className={styles.voiceWave}>
-          <span /><span /><span /><span /><span />
-        </div>
-        <span>Listening...</span>
-      </div>
     </div>
   );
 }

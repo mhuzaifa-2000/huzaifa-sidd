@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
+import { UserIcon } from "../icons";
 import type { ChatViewProps } from "../../lib/types/chat";
 import styles from "./ChatView.module.css";
 
@@ -26,10 +28,18 @@ export function ChatView({ messages, isActive }: ChatViewProps) {
             }`}
           >
             <div className={styles.messageAvatar}>
-              {msg.role === "user" ? "H" : "\u2726"}
+              {msg.role === "user" ? <UserIcon width={15} height={15} /> : "H"}
             </div>
             <div className={styles.messageContent}>
-              {msg.isTyping ? <TypingDots /> : msg.content}
+              {msg.isTyping ? (
+                <TypingDots />
+              ) : msg.role === "bot" ? (
+                <div className={styles.markdown}>
+                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+                </div>
+              ) : (
+                msg.content
+              )}
             </div>
           </div>
         ))}

@@ -3,7 +3,7 @@ import type { SpeechRecognitionEvent } from "../lib/types/speech";
 
 export function useVoiceInput(onResult: (text: string) => void) {
   const [isRecording, setIsRecording] = useState(false);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<any | null>(null);
 
   const stop = useCallback(() => {
     setIsRecording(false);
