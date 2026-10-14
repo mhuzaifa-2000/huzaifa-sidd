@@ -41,8 +41,8 @@ export function Header({ name, navLinks, socialLinks }: HeaderProps) {
 
 export const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "work", href: "#work" },
-  { label: "articles", href: "#articles" },
-  { label: "books", href: "#books" },
+  { label: "articles", href: "/articles" },
+  { label: "books", href: "/books" },
 ];
 
 export const DEFAULT_SOCIAL_LINKS: SocialLink[] = [

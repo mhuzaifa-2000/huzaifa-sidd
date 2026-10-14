@@ -1,0 +1,12 @@
+.main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.heading {
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--text-primary);
+  animation: fadeSlideIn 0.8s ease-out both;
+}

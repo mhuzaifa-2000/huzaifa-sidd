@@ -52,5 +52,5 @@ Outside of software, I'm a big sports guy and a keen golfer — I currently play
 
 I also used to play tennis, competing in national-level tournaments. I'm a big fan of Roger Federer in tennis and Rory McIlroy in golf.
 
-In my downtime, I occasionally read self-help books or watch Netflix. To see my favorite books, check out the [books page](#books).
+In my downtime, I occasionally read self-help books or watch Netflix. To see my favorite books, check out the [books page](/books).
 `;
