@@ -34,11 +34,18 @@ Today I'm an Associate Tech Lead at the same company, leading various developmen
 - Front-end development and crafting great user experiences
 
 # Expertise
-- Full Stack development
-- Developing AI-enabled software
+- Full Stack development.
+- AI Automations and RAG Systems.
+
+##Books I've read and like:
+- *Designing Data-Intensive Applications* by Martin Kleppmann: Taught me how to architect robust, scalable systems and reason about trade-offs in reliability, consistency, and performance.
+- *AI Engineering* by Chip Huyen: Gave me a practical framework for building production applications on foundation models, covering evaluation, prompt engineering, RAG, agents, and inference optimization.
+- *Atomic Habits* by James Clear: Showed me how small, consistent improvements compound over time, and how to build habits through systems rather than relying on motivation.
+- *The Forty Rules of Love* by Elif Shafak: Through the story of Rumi and Shams of Tabriz, it taught me to look beyond rigid thinking, approach people with empathy and patience, and value inner growth as much as outward achievement.
+- *The Alchemist* by Paulo Coelho: Through Santiago's journey, it taught me to pursue my goals with conviction, treat setbacks as part of the path, and recognize that the journey itself shapes who I become.
 
 # What Problems Excite Me
-What excites me most is solving the productivity side of software — making workflows as efficient as possible for the people using them. I'm obsessed with saving time for my users.
+- The Application side of AI: Building systems which maximise on the context provided and make autonomous decisions on various business problems.
 
 # Hobbies & Sports
 Outside of software, I'm a big sports guy and a keen golfer — I currently play off a four handicap, and I won some national tournaments as a junior golfer.
