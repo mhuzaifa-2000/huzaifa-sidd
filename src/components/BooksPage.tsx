@@ -4,7 +4,7 @@ import { ThemeToggle } from "./ui/ThemeToggle";
 import barStyles from "./ui/BottomBar.module.css";
 import styles from "./BooksPage.module.css";
 
-const cover = (isbn: string) => `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+const cover = (isbn: string) => `/books/${isbn}.jpg`;
 
 const BOOKS = [
   {
@@ -54,7 +54,7 @@ export function BooksPage() {
         <ul className={styles.list}>
           {BOOKS.map((b, i) => (
             <li key={b.isbn} className={styles.tile} style={{ animationDelay: `${i * 0.1}s` }}>
-              <img className={styles.cover} src={cover(b.isbn)} alt={`${b.title} cover`} loading="lazy" />
+              <img className={styles.cover} src={cover(b.isbn)} alt={`${b.title} cover`} />
               <div className={styles.body}>
                 <h2 className={styles.title}>{b.title}</h2>
                 <p className={styles.author}>{b.author}</p>

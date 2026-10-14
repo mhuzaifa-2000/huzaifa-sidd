@@ -1,15 +1,21 @@
-import { GitHubIcon, LinkedInIcon, EmailIcon, MenuIcon } from "../icons";
+import { useState } from "react";
+import { GitHubIcon, LinkedInIcon, EmailIcon, MenuIcon, HomeIcon } from "../icons";
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "../../lib/config";
 import type { NavLink, SocialLink, HeaderProps } from "../../lib/types/header";
 import styles from "./Header.module.css";
 
 export function Header({ name, navLinks, socialLinks }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className={styles.header}>
-      <span className={styles.headerName}>{name}</span>
+      <a href="/" className={styles.headerName}>{name}</a>
       <div className={styles.headerRight}>
         <nav>
           <ul className={styles.navLinks}>
+            <li>
+              <a href="/" aria-label="Home" className={styles.homeLink}><HomeIcon /></a>
+            </li>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href}>{link.label}</a>
@@ -31,10 +37,27 @@ export function Header({ name, navLinks, socialLinks }: HeaderProps) {
             </a>
           ))}
         </div>
-        <button className={styles.mobileMenuBtn} aria-label="Menu">
+        <button
+          className={styles.mobileMenuBtn}
+          aria-label="Menu"
+          aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+        >
           <MenuIcon />
         </button>
       </div>
+      {open && (
+        <ul className={styles.mobileMenu}>
+          <li>
+            <a href="/" className={styles.homeLink}><HomeIcon /> home</a>
+          </li>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
   );
 }

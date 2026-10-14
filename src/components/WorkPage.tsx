@@ -43,7 +43,7 @@ export function WorkPage() {
         <ul className={styles.list}>
           {PROJECTS.map((p, i) => (
             <li key={p.name} className={styles.tile} style={{ animationDelay: `${i * 0.1}s` }}>
-              <img className={styles.logo} src={p.image} alt={`${p.name} logo`} loading="lazy" />
+              <img className={styles.logo} src={p.image} alt={`${p.name} logo`} />
               <div className={styles.body}>
                 <h2 className={styles.title}>
                   <a href={p.href} target="_blank" rel="noreferrer">{p.name}</a>

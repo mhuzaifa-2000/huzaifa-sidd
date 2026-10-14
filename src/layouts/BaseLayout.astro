@@ -4,15 +4,34 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+// ponytail: warm the cache for the books and work pages on every visit; move to per-page if the list grows
+const PREFETCH = [
+  ...["9781449373320", "9781098166304", "9780735211292", "9780241972939", "9780062315007"].map((i) => `/books/${i}.jpg`),
+  "/work/unmudl.png",
+  "/work/walletflo.png",
+  "/work/threathawk.png",
+];
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
+  <script is:inline>
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
+  {PREFETCH.map((href) => <link rel="prefetch" href={href} as="image" />)}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet" />
