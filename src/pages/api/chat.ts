@@ -7,7 +7,7 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = import.meta.env.OPENAI_API_KEY;
   if (!apiKey) {
-    return jsonResponse({ error: 'Missing OPENAI_API_KEY' }, 500);
+    return jsonResponse({ error: "Sorry, I'm not available to answer questions right now. 😴" }, 500);
   }
 
   let body: ChatRequestBody;
